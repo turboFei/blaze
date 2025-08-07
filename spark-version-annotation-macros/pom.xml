@@ -34,10 +34,7 @@
     <profile>
       <id>scala-2.12</id>
       <activation>
-        <property>
-          <name>scalaVersion</name>
-          <value>2.12</value>
-        </property>
+        <activeByDefault>true</activeByDefault>
       </activation>
       <dependencies>
         <dependency>
