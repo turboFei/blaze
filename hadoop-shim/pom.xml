@@ -4,12 +4,12 @@
 
   <parent>
     <groupId>org.blaze</groupId>
-    <artifactId>blaze-engine</artifactId>
+    <artifactId>blaze-engine_${scalaVersion}</artifactId>
     <version>${revision}</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>org.blaze</groupId>
-  <artifactId>hadoop-shim</artifactId>
+  <artifactId>hadoop-shim_${scalaVersion}</artifactId>
   <packaging>jar</packaging>
 
   <dependencies>
