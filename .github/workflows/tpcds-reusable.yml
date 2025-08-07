@@ -44,7 +44,7 @@ jobs:
 
       - name: Build
         if: steps.cache-tpcds-validator.outputs.cache-hit != 'true'
-        run: mvn package -DskipTests -Pscala-${{ inputs.scalaver }}
+        run: ./build/mvn package -DskipTests -Pscala-${{ inputs.scalaver }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
