@@ -431,6 +431,10 @@
           <value>2.13</value>
         </property>
       </activation>
+      <properties>
+        <scalaVersion>2.13</scalaVersion>
+        <scalaLongVersion>2.13.8</scalaLongVersion>
+      </properties>
       <build>
         <plugins>
           <plugin>
