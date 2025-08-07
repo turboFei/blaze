@@ -445,6 +445,11 @@
             <configuration>
               <compilerPlugins>
                 <compilerPlugin>
+                  <groupId>org.scalameta</groupId>
+                  <artifactId>semanticdb-scalac_${scalaLongVersion}</artifactId>
+                  <version>4.8.1</version>
+                </compilerPlugin>
+                <compilerPlugin>
                   <groupId>org.scalamacros</groupId>
                   <artifactId>paradise_${scalaLongVersion}</artifactId>
                   <version>${scalamacros.paradise.version}</version>
