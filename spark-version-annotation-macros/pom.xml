@@ -36,7 +36,7 @@
       <activation>
         <property>
           <name>scalaVersion</name>
-          <value>2.12</value>
+          <value>/^2\.12$/</value>
         </property>
       </activation>
       <dependencies>
