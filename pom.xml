@@ -469,10 +469,10 @@
             <artifactId>scala-maven-plugin</artifactId>
             <configuration>
               <args>
+                <arg>-Ywarn-unused</arg>
                 <!-- https://github.com/scalamacros/paradise is no longer actively developed. -->
                 <!-- In Scala 2.13, the plugin's functionality has been included in the compiler -->
                 <!-- directly under the -Ymacro-annotations flag.  -->
-                <arg>-Ywarn-unused</arg>
                 <arg>-Ymacro-annotations</arg>
               </args>
             </configuration>
