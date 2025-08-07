@@ -159,6 +159,18 @@
           <jvmArgs>
             <jvmArg>-Dblaze.shim=${shimName}</jvmArg>
           </jvmArgs>
+          <compilerPlugins>
+            <compilerPlugin>
+              <groupId>org.scalameta</groupId>
+              <artifactId>semanticdb-scalac_${scalaLongVersion}</artifactId>
+              <version>${semanticdb.version}</version>
+            </compilerPlugin>
+            <compilerPlugin>
+              <groupId>org.scalamacros</groupId>
+              <artifactId>paradise_${scalaLongVersion}</artifactId>
+              <version>${scalamacros.paradise.version}</version>
+            </compilerPlugin>
+          </compilerPlugins>
         </configuration>
         <dependencies>
           <dependency>
@@ -409,35 +421,6 @@
       <properties>
         <javaVersion>17</javaVersion>
       </properties>
-    </profile>
-
-    <profile>
-      <id>scala-2.12</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>net.alchim31.maven</groupId>
-            <artifactId>scala-maven-plugin</artifactId>
-            <configuration>
-              <compilerPlugins>
-                <compilerPlugin>
-                  <groupId>org.scalameta</groupId>
-                  <artifactId>semanticdb-scalac_${scalaLongVersion}</artifactId>
-                  <version>${semanticdb.version}</version>
-                </compilerPlugin>
-                <compilerPlugin>
-                  <groupId>org.scalamacros</groupId>
-                  <artifactId>paradise_${scalaLongVersion}</artifactId>
-                  <version>${scalamacros.paradise.version}</version>
-                </compilerPlugin>
-              </compilerPlugins>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
 
     <profile>
