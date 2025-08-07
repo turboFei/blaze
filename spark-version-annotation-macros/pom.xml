@@ -35,8 +35,8 @@
       <id>scala-2.12</id>
       <activation>
         <property>
-          <name>scalaLongVersion</name>
-          <value>/^2\.12\..*$/</value>
+          <name>scalaVersion</name>
+          <value>2.12</value>
         </property>
       </activation>
       <dependencies>
