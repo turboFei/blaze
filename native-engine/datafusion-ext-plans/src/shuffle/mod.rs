@@ -15,7 +15,7 @@
 use std::{
     fmt,
     fs::{File, OpenOptions},
-    os::unix::fs::{MetadataExt, OpenOptionsExt},
+    os::unix::fs::{MetadataExt, OpenOptionsExt, PermissionsExt},
     path::Path,
     sync::{
         Arc,
@@ -283,8 +283,9 @@ pub fn open_shuffle_file<P: AsRef<Path>>(path: P) -> std::io::Result<File> {
         .write(true)
         .create(true)
         .truncate(true)
-        .mode(0o644)
         .open(path_ref)?;
+
+    std::fs::set_permissions(path_ref, std::fs::Permissions::from_mode(0o644))?;
 
     let metadata = file.metadata()?;
     let permissions = metadata.mode();
