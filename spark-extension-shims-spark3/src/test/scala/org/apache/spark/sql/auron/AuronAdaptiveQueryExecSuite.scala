@@ -20,8 +20,7 @@ import org.apache.auron.sparkverEnableMembers
 
 @sparkverEnableMembers("3.5")
 class AuronAdaptiveQueryExecSuite
-    extends org.apache.spark.sql.QueryTest
-    with BaseAuronSQLSuite
+    extends BaseAuronSQLSuite
     with org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanHelper {
 
   import org.apache.spark.scheduler.{SparkListener, SparkListenerEvent}

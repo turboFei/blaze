@@ -17,9 +17,11 @@
 package org.apache.spark.sql.auron
 
 import org.apache.spark.SparkConf
+import org.apache.spark.sql.{DataFrame, QueryTest, Row}
+import org.apache.spark.sql.auron.AuronConvertStrategy.convertibleTag
 import org.apache.spark.sql.test.SharedSparkSession
 
-trait BaseAuronSQLSuite extends SharedSparkSession {
+trait BaseAuronSQLSuite extends QueryTest with SharedSparkSession {
 
   override protected def sparkConf: SparkConf = {
     super.sparkConf
@@ -31,4 +33,12 @@ trait BaseAuronSQLSuite extends SharedSparkSession {
       .set("spark.auron.enable", "true")
   }
 
+  override def checkAnswer(df: => DataFrame, expectedAnswer: Seq[Row]): Unit = {
+    assert(
+      df.queryExecution.sparkPlan
+        .find(p => p.getTagValue(convertibleTag).contains(true))
+        .nonEmpty,
+      s"No $convertibleTag found in the plan, Auron is not applied.")
+    super.checkAnswer(df, expectedAnswer)
+  }
 }

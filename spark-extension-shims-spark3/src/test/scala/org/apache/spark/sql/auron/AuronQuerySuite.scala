@@ -22,10 +22,7 @@ import org.apache.spark.sql.Row
 
 import org.apache.auron.util.AuronTestUtils
 
-class AuronQuerySuite
-    extends org.apache.spark.sql.QueryTest
-    with BaseAuronSQLSuite
-    with AuronSQLTestHelper {
+class AuronQuerySuite extends BaseAuronSQLSuite with AuronSQLTestHelper {
   import testImplicits._
 
   test("test partition path has url encoded character") {
